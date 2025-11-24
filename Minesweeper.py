@@ -5,7 +5,7 @@ pygame.init()
 pygame.font.init()
 
 # ---------------- SETTINGS ----------------
-ROWS, COLS = 16, 16
+ROWS, COLS = 16,16
 MINES = 35
 CELL = 35
 HEADER = 60
@@ -114,17 +114,25 @@ running = True
 game_over = False
 win = False
 start_time = time.time()
+end_time = None
 flags_left = MINES
 
 while running:
     screen.fill((0, 0, 0))
-    elapsed = int(time.time() - start_time)
+    
+    # Calculate elapsed time - stops when game ends
+    if game_over or win:
+        if end_time is None:
+            end_time = time.time()
+        elapsed = int(end_time - start_time)
+    else:
+        elapsed = int(time.time() - start_time)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-        if not game_over:
+        if not game_over and not win:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mx, my = pygame.mouse.get_pos()
                 if my > HEADER:
