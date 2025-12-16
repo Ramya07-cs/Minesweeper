@@ -36,7 +36,7 @@ NUM_COLORS = {
 
 # setup 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("MINESWEEPER: AUDIO EDITION")
+pygame.display.set_caption("MINESWEEPER")
 font = pygame.font.SysFont("consolas", 30, bold=True)
 big_font = pygame.font.SysFont("consolas", 40, bold=True)
 small_font = pygame.font.SysFont("consolas", 25)
@@ -288,4 +288,5 @@ while running:
     clock.tick(60)
 
 pygame.quit()
+
 sys.exit()
