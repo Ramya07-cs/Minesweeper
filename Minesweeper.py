@@ -2,7 +2,7 @@ import pygame
 import random
 import sys
 import time
-import array  # Used to generate sound data
+import array 
 
 # Initialize Pygame and Mixer (Audio)
 pygame.init()
@@ -66,16 +66,6 @@ except Exception as e:
     EXPLOSION_SFX = None
 
 # ---------------- GAME VARIABLES ----------------
-board = []
-revealed = []
-flagged = []
-mines = set()
-first_click_done = False
-game_over = False
-win = False
-start_time = None
-flags_left = 0
-shake_duration = 0
 
 dirs = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 
@@ -290,3 +280,4 @@ while running:
 pygame.quit()
 
 sys.exit()
+
